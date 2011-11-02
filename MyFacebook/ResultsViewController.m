@@ -87,18 +87,26 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    if (section == 0) {
+        return 1;
+    } else {
+        return 4;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80.0;
+    if (indexPath.section == 0) {
+        return 80.0;
+    } else {
+        return 20.0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,14 +117,24 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = [myData objectForKey:@"name"];
+            cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+            cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+            cell.textLabel.numberOfLines = 2;
+            
+            cell.imageView.image = [self imageForObject:[myData objectForKey:@"id"]];
+            
+            break;
+        case 1:
+            
+            break;
+        default:
+            break;
+    }
     
-    // Configure the cell...
-    cell.textLabel.text = [myData objectForKey:@"name"];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.textLabel.numberOfLines = 2;
-    
-    cell.imageView.image = [self imageForObject:[myData objectForKey:@"id"]];
     
     
     return cell;

@@ -52,7 +52,7 @@
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     //view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"farm.png"]];
     [view setBackgroundColor:[UIColor whiteColor]];
-    self.title = @"Home";
+    self.title = @"Facebook测试";
     self.view = view;
     [view release];
     
@@ -188,7 +188,7 @@
             
             [nameID release];
             
-            ResultsViewController *controller = [[ResultsViewController alloc] initWithTitle:@"Your Information" data:userData];
+            ResultsViewController *controller = [[ResultsViewController alloc] initWithTitle:@"您的信息" data:userData];
             
             [self.navigationController pushViewController:controller animated:YES];
             
@@ -204,7 +204,7 @@
                 [frields addObject:[array objectAtIndex:(arc4random() % [array count])]];
             }
                                     
-            FrieldsViewController *frieldsViewController = [[FrieldsViewController alloc] initWithTitle:@"Frields List" data:frields];
+            FrieldsViewController *frieldsViewController = [[FrieldsViewController alloc] initWithTitle:@"好友列表" data:frields];
             
             [frields release];
             
