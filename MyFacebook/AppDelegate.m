@@ -19,6 +19,7 @@ NSString * const fbAppId = @"131529600286680";
 - (void)dealloc
 {
     [_window release];
+    [_rootViewController release];
     [super dealloc];
 }
 
@@ -33,6 +34,8 @@ NSString * const fbAppId = @"131529600286680";
     
     //[self.window addSubview:viewController.view];
     self.window.rootViewController = navController;
+    
+    [navController release];
     
     [self.window makeKeyAndVisible];
     

@@ -19,6 +19,11 @@ typedef enum graphAPI
 {
     Facebook *facebook;
     UIButton *loginButton;
+    UIButton *logoutButton;
+    UIButton *showMeButton;
+    UIButton *feedButton;
+    UIButton *requestButton;
+    UIButton *friendsButton;
     UIImageView *profileImageView;
     UILabel *profileNameLabel;
     UIView *loggedInView;
@@ -27,8 +32,16 @@ typedef enum graphAPI
 
 @property (nonatomic, retain) Facebook *facebook;
 @property (nonatomic, retain) UIButton *loginButton;
+@property (nonatomic, retain) UIButton *logoutButton;
+@property (nonatomic, retain) UIButton *showMeButton;
+@property (nonatomic, retain) UIButton *feedButton;
+@property (nonatomic, retain) UIButton *requestButton;
+@property (nonatomic, retain) UIButton *friendsButton;
 @property (nonatomic, retain) UIImageView *profileImageView;
 @property (nonatomic, retain) UILabel *profileNameLabel;
 @property (nonatomic, retain) UIView *loggedInView;
+
+- (void)showLoggedIn;
+- (void)showLoggedOut:(BOOL)clearInfo;
 
 @end

@@ -15,6 +15,11 @@
 
 @synthesize facebook;
 @synthesize loginButton;
+@synthesize logoutButton;
+@synthesize showMeButton;
+@synthesize feedButton;
+@synthesize requestButton;
+@synthesize friendsButton;
 @synthesize profileImageView;
 @synthesize profileNameLabel;
 @synthesize loggedInView;
@@ -73,7 +78,7 @@
 //                             alpha:1.0];
     loggedInView.backgroundColor = [UIColor whiteColor];
 
-    UIButton *logoutButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    logoutButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
     logoutButton.frame = CGRectMake(10,10,81,29);
     [logoutButton addTarget:self
                      action:@selector(logout)
@@ -88,7 +93,7 @@
     
     [loggedInView addSubview:logoutButton];
     
-    UIButton *showMeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    showMeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     showMeButton.frame = CGRectMake(10, 50, (self.view.bounds.size.width - 20), 40);
     showMeButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
     [showMeButton setTitle:@"Show Me" 
@@ -98,7 +103,7 @@
     
     [loggedInView addSubview:showMeButton];
 
-    UIButton *feedButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    feedButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     feedButton.frame = CGRectMake(10, 100, (self.view.bounds.size.width - 20), 40);
     feedButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
     [feedButton setTitle:@"Send to Wall" 
@@ -108,7 +113,7 @@
     
     [loggedInView addSubview:feedButton];
 
-    UIButton *requestButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    requestButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     requestButton.frame = CGRectMake(10, 150, (self.view.bounds.size.width - 20), 40);
     requestButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
     [requestButton setTitle:@"Send Request" 
@@ -118,7 +123,7 @@
     
     [loggedInView addSubview:requestButton];
     
-    UIButton *friendsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    friendsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     friendsButton.frame = CGRectMake(10, 200, (self.view.bounds.size.width - 20), 40);
     friendsButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
     [friendsButton setTitle:@"Show Friends" 
@@ -128,8 +133,6 @@
     
     [loggedInView addSubview:friendsButton];
     
-    
-
     [self.view addSubview:loggedInView];
     
     
@@ -183,8 +186,13 @@
             
             NSDictionary *userData = [NSDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"id", nameID, @"name", [result objectForKey:@"picture"], @"details", nil];
             
+            [nameID release];
+            
             ResultsViewController *controller = [[ResultsViewController alloc] initWithTitle:@"Your Information" data:userData];
+            
             [self.navigationController pushViewController:controller animated:YES];
+            
+            [controller release];
             
             break;
         }
@@ -195,9 +203,14 @@
             for (NSInteger i = 0; i < [array count] && i < 16; i++) {
                 [frields addObject:[array objectAtIndex:(arc4random() % [array count])]];
             }
-                        
+                                    
             FrieldsViewController *frieldsViewController = [[FrieldsViewController alloc] initWithTitle:@"Frields List" data:frields];
+            
+            [frields release];
+            
             [self.navigationController pushViewController:frieldsViewController animated:YES];
+            
+            [frieldsViewController release];
             
             break;
         }
@@ -391,6 +404,14 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.loginButton = nil;
+    self.logoutButton = nil;
+    self.showMeButton = nil;
+    self.feedButton = nil;
+    self.requestButton = nil;
+    self.friendsButton = nil;
+    self.profileImageView = nil;
+    self.profileNameLabel = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -402,6 +423,11 @@
 
 - (void)dealloc {
     [loginButton release];
+    [logoutButton release];
+    [showMeButton release];
+    [feedButton release];
+    [requestButton release];
+    [friendsButton release];
     [profileImageView release];
     [profileNameLabel release];
     [super dealloc];

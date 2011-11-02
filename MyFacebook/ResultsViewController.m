@@ -46,9 +46,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
-    
-    
 }
 
 - (void)viewDidUnload
@@ -56,6 +53,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.myData = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,10 +122,12 @@
     return cell;
 }
 
-- (UIImage *) imageForObject:(NSString *)objectID {
+- (UIImage *) imageForObject:(NSString *)objectID 
+{
     // Get the object image
     NSString *url = [[NSString alloc] initWithFormat:@"https://graph.facebook.com/%@/picture",objectID];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+    [url release];
     return image;
 }
 
@@ -183,5 +183,11 @@
 //     [detailViewController release];
 //     */
 //}
+
+- (void)dealloc
+{
+    [myData release];
+    [super dealloc];
+}
 
 @end

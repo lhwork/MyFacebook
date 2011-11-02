@@ -30,16 +30,6 @@
 		0674DD05145FDAC300541EF4 /* FrieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0674DD04145FDAC300541EF4 /* FrieldsViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0604571914592A19001A4FD3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 060456EC14592A18001A4FD3 /* facebook-ios-sdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = "facebook-ios-sdk";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		060456A2145929AC001A4FD3 /* MyFacebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFacebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		060456A6145929AC001A4FD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -51,10 +41,8 @@
 		060456B4145929AC001A4FD3 /* MyFacebook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFacebook-Prefix.pch"; sourceTree = "<group>"; };
 		060456B5145929AC001A4FD3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		060456B6145929AC001A4FD3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		060456EC14592A18001A4FD3 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 		060456EF14592A18001A4FD3 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		060456F014592A18001A4FD3 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
-		060456F114592A18001A4FD3 /* facebook_ios_sdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facebook_ios_sdk_Prefix.pch; sourceTree = "<group>"; };
 		060456F214592A18001A4FD3 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
 		060456F314592A18001A4FD3 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
 		060456F414592A18001A4FD3 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
@@ -158,10 +146,8 @@
 		060456EB14592A18001A4FD3 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				060456EC14592A18001A4FD3 /* facebook-ios-sdk.xcodeproj */,
 				060456EF14592A18001A4FD3 /* Facebook.h */,
 				060456F014592A18001A4FD3 /* Facebook.m */,
-				060456F114592A18001A4FD3 /* facebook_ios_sdk_Prefix.pch */,
 				060456F214592A18001A4FD3 /* FBConnect.h */,
 				060456F314592A18001A4FD3 /* FBDialog.bundle */,
 				060456F414592A18001A4FD3 /* FBDialog.h */,
@@ -173,14 +159,6 @@
 				060456FA14592A18001A4FD3 /* JSON */,
 			);
 			path = Facebook;
-			sourceTree = "<group>";
-		};
-		060456ED14592A18001A4FD3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0604571A14592A19001A4FD3 /* libfacebook_ios_sdk.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		060456FA14592A18001A4FD3 /* JSON */ = {
@@ -241,28 +219,12 @@
 			mainGroup = 06045697145929AC001A4FD3;
 			productRefGroup = 060456A3145929AC001A4FD3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 060456ED14592A18001A4FD3 /* Products */;
-					ProjectRef = 060456EC14592A18001A4FD3 /* facebook-ios-sdk.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				060456A1145929AC001A4FD3 /* MyFacebook */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0604571A14592A19001A4FD3 /* libfacebook_ios_sdk.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libfacebook_ios_sdk.a;
-			remoteRef = 0604571914592A19001A4FD3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		060456A0145929AC001A4FD3 /* Resources */ = {

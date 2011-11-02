@@ -49,6 +49,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.frields = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -162,6 +163,12 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+}
+
+- (void)dealloc
+{
+    [frields release];
+    [super dealloc];
 }
 
 @end
