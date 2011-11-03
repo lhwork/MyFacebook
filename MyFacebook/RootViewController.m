@@ -183,15 +183,17 @@
         case kGraphMe:
         {
             NSString *nameID = [[NSString alloc] initWithFormat:@"%@ (%@)", [result objectForKey:@"name"], [result objectForKey:@"id"]];
-            
-            NSDictionary *userData = [NSDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"id", nameID, @"name", [result objectForKey:@"picture"], @"details", nil];
+                        
+            NSMutableDictionary *userData = [NSMutableDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"id", nameID, @"name", [result objectForKey:@"picture"], @"details", nil];
             
             [nameID release];
             
-            ResultsViewController *controller = [[ResultsViewController alloc] initWithTitle:@"您的信息" data:userData];
+            ResultsViewController *controller = [[ResultsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+            controller.navigationItem.title = @"您的信息";
+            [controller setMyData:userData];
             
             [self.navigationController pushViewController:controller animated:YES];
-            
+
             [controller release];
             
             break;

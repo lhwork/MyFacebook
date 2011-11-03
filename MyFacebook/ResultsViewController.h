@@ -15,7 +15,6 @@
 
 @property (nonatomic, retain) NSMutableDictionary *myData;
 
-- (id)initWithTitle:(NSString *)title data:(NSDictionary *)data;
 - (UIImage *) imageForObject:(NSString *)objectID;
 
 @end

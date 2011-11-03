@@ -13,15 +13,11 @@
 
 @synthesize myData;
 
-- (id)initWithTitle:(NSString *)title data:(NSDictionary *)data
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super init];
+    self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
-        if (data != nil) {
-            self.myData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:YES];
-        }
-        self.navigationItem.title = title;
+        
     }
     return self;
 }
@@ -96,7 +92,7 @@
     if (section == 0) {
         return 1;
     } else {
-        return 4;
+        return 8;
     }
 }
 
@@ -105,7 +101,16 @@
     if (indexPath.section == 0) {
         return 80.0;
     } else {
-        return 20.0;
+        return 30.0;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return @"Feeds";
+    } else {
+        return @""; 
     }
 }
 
